@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monochrome Architects | Homes and offices in Gurgaon & Delhi NCR</title>
+<meta name="description" content="Architecture, interiors and execution for homes and offices in Gurgaon and Delhi NCR. 100+ projects, from design to handover, including approvals and OC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#000;--white:#fff;--g1:#f1f1f1;--g2:#d9d9d9;--g3:#8c8c8c;--g4:#3a3a3a;--max:1080px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--black);background:var(--white);line-height:1.55;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--black);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+h1,h2,h3{line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(30px,5vw,48px);font-weight:800;margin-bottom:12px}
+.lead{color:var(--g4);max-width:60ch;margin-bottom:40px}
+.btn{display:inline-block;background:var(--black);color:var(--white);padding:16px 28px;font-weight:600;text-decoration:none;border:2px solid var(--black)}
+.btn:hover{background:var(--white);color:var(--black)}
+.btn.alt{background:transparent;color:inherit}
+.btn.alt:hover{background:var(--white);color:var(--black)}
+
+/* hero: the grey scale is the brand */
+.hero{background:var(--black);color:var(--white);padding:0}
+.hero .wrap{padding-top:72px;padding-bottom:56px}
+.hero h1{font-size:clamp(44px,11vw,128px);font-weight:800;letter-spacing:-.04em}
+.hero p{font-size:clamp(19px,2.4vw,26px);max-width:34ch;margin:24px 0 36px;color:var(--g2)}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn{background:var(--white);color:var(--black);border-color:var(--white)}
+.hero .btn:hover{background:transparent;color:var(--white)}
+.hero .btn.alt{background:transparent;color:var(--white);border-color:var(--g3)}
+.scale{display:flex;height:56px}
+.scale span{flex:1}
+.scale span:nth-child(1){background:#000}.scale span:nth-child(2){background:#222}.scale span:nth-child(3){background:#444}
+.scale span:nth-child(4){background:#666}.scale span:nth-child(5){background:#8c8c8c}.scale span:nth-child(6){background:#b0b0b0}
+.scale span:nth-child(7){background:#d4d4d4}.scale span:nth-child(8){background:#f1f1f1}.scale span:nth-child(9){background:#fff}
+
+/* proof */
+.proof{background:var(--white);padding:48px 0;border-bottom:2px solid var(--black)}
+.proof .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.proof strong{display:block;font-size:40px;font-weight:800;letter-spacing:-.03em}
+.proof span{color:var(--g4)}
+
+/* case studies */
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.case{border:2px solid var(--black)}
+.case .img{aspect-ratio:4/3;background:var(--g2);display:flex;align-items:center;justify-content:center;color:var(--g3);font-size:14px}
+.case .img img{width:100%;height:100%;object-fit:cover;display:block}
+.case .body{padding:20px}
+.case h3{font-size:22px;margin-bottom:10px}
+.case .area{font-size:15px;color:var(--g4)}
+
+/* services */
+.services{background:var(--g1)}
+.pack{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:2px solid var(--black);background:var(--white)}
+.pack div{padding:28px;border-right:2px solid var(--black);border-bottom:2px solid var(--black);margin:0 -2px -2px 0}
+.pack h3{font-size:22px;margin-bottom:8px}
+.pack p{font-size:15px;color:var(--g4)}
+
+/* process: a real sequence */
+.steps{list-style:none;counter-reset:s;display:grid;gap:0;border-top:2px solid var(--black)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid var(--g2)}
+.steps li::before{content:counter(s);font-weight:800;font-size:28px;color:var(--g3)}
+.steps b{display:block;font-size:20px}
+.steps span{color:var(--g4);font-size:16px}
+
+
+
+/* project gallery */
+button.img{display:block;position:relative;width:100%;border:0;padding:0;cursor:pointer;font:inherit}
+.case .count{position:absolute;right:10px;bottom:10px;background:var(--black);color:var(--white);padding:6px 12px;font-size:14px;font-weight:600}
+.lb{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.94);display:flex;align-items:center;justify-content:center;padding:56px 16px}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.lb button{position:absolute;background:var(--white);color:var(--black);border:0;width:48px;height:48px;font-size:28px;line-height:1;cursor:pointer}
+.lb .x{top:8px;right:8px}.lb .p{left:8px;top:50%;transform:translateY(-50%)}.lb .n{right:8px;top:50%;transform:translateY(-50%)}
+.lb p{position:absolute;left:0;right:0;bottom:14px;text-align:center;color:var(--g2);font-size:15px}
+
+/* about + contact */
+.about .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center}
+.about .img{aspect-ratio:4/5;background:var(--g2);display:flex;align-items:center;justify-content:center;color:var(--g3);font-size:14px}
+.about .img img{width:100%;height:100%;object-fit:cover;display:block}
+.about p{color:var(--g4);margin-bottom:16px;max-width:55ch}
+.contact{background:var(--black);color:var(--white)}
+.contact .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px}
+.contact h2{margin-bottom:24px}
+.contact dl{display:grid;gap:18px}
+.contact dt{color:var(--g3);font-size:14px}
+.contact dd{font-size:20px}
+.contact a{text-decoration:underline;text-underline-offset:4px}
+form{display:grid;gap:14px}
+label{font-size:14px;color:var(--g2)}
+input,select,textarea{width:100%;padding:14px;font:inherit;background:var(--white);color:var(--black);border:2px solid var(--white);border-radius:0}
+textarea{min-height:110px;resize:vertical}
+form button{font:inherit;font-weight:600;cursor:pointer;background:var(--white);color:var(--black);padding:16px 28px;border:2px solid var(--white)}
+form button:hover{background:transparent;color:var(--white)}
+footer{padding:40px 0;font-size:15px;color:var(--g4)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* sticky WhatsApp for phones */
+.wa{position:fixed;right:16px;bottom:16px;z-index:5;background:var(--black);color:var(--white);padding:14px 20px;font-weight:600;text-decoration:none;border:2px solid var(--white)}
+@media(min-width:900px){.wa{display:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Monochrome<br>Architects</h1>
+    <p>Homes and offices in Gurgaon and Delhi NCR, from design to handover.</p>
+    <div class="cta">
+      <!-- REPLACE 91XXXXXXXXXX with your WhatsApp number (country code, no + or spaces) -->
+      <a class="btn" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Monochrome%2C%20I%20want%20to%20discuss%20a%20project">Message on WhatsApp</a>
+      <a class="btn alt" href="#work">See our projects</a>
+    </div>
+  </div>
+  <div class="scale" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</header>
+
+<div class="proof">
+  <div class="wrap">
+    <div><strong>100+</strong><span>homes and offices completed</span></div>
+    <div><strong>10+ years</strong><span>of combined practice</span></div>
+    <div><strong>Design to OC</strong><span>drawings, execution and approvals under one roof</span></div>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Recent projects</h2>
+    <p class="lead">A selection of homes and offices we have designed and built.</p>
+    <div class="cases" id="cases"></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>Four ways to work with us</h2>
+    <p class="lead">Pick the one that matches where you are. Not sure? Message us and we will tell you.</p>
+    <div class="pack">
+      <div><h3>Design only</h3><p>Layouts, 3D views and working drawings. You hire your own contractor.</p></div>
+      <div><h3>Design + execution</h3><p>One team from drawings to handover. One person answerable for cost and timeline.</p></div>
+      <div><h3>Renovation oversight</h3><p>Already have a contractor? We check quality, billing and progress on site.</p></div>
+      <div><h3>Approvals and OC</h3><p>Sanction drawings, completion drawings and Occupancy Certificate applications.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>How a project runs</h2>
+    <p class="lead">So you know what happens after you message us.</p>
+    <ol class="steps">
+      <li><div><b>Free 20-minute call</b><span>Your space, budget and deadline. We tell you honestly if we are a fit.</span></div></li>
+      <li><div><b>Site visit and measurement</b><span>We see the space before quoting anything.</span></div></li>
+      <li><div><b>Design and costing</b><span>Layouts, 3D views and an itemised budget you can compare.</span></div></li>
+      <li><div><b>Execution with weekly updates</b><span>Photos and progress every week, payments tied to completed work.</span></div></li>
+      <li><div><b>Handover</b><span>Snag list closed, drawings and warranties handed over.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="img"><!-- Replace with: <img src="team.jpg" alt="Rohit Gupta and Mehak Ahuja, Monochrome Architects"> -->Add team photo</div>
+    <div>
+      <h2>About us</h2>
+      <p>Monochrome Architects is an architecture and interior practice working across Gurgaon and Delhi NCR. We have completed 100+ homes and offices over 10+ years.</p>
+      <p>We handle the full job: design, execution, and the paperwork most people forget until it is too late, like approvals and the Occupancy Certificate.</p>
+      <p>Founded by architects Rohit Gupta and Mehak Ahuja. <!-- Edit names/bio as you like --></p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Contact</h2>
+      <dl>
+        <div><dt>WhatsApp (fastest)</dt><dd><a href="https://wa.me/91XXXXXXXXXX">+91 XXXXX XXXXX</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></dd></div>
+        <div><dt>Office</dt><dd>Add office address, Gurgaon / Delhi</dd></div>
+        <div><dt>Hours</dt><dd>Mon to Sat, 10 am to 7 pm</dd></div>
+      </dl>
+    </div>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <div><label for="n">Your name</label><input id="n" name="name" required></div>
+      <div><label for="p">Phone number</label><input id="p" name="phone" type="tel" required></div>
+      <div><label for="t">What do you need?</label>
+        <select id="t" name="type"><option>Home design / interiors</option><option>Office design / fit-out</option><option>Renovation</option><option>Approvals / OC</option><option>Something else</option></select></div>
+      <div><label for="m">Tell us about the space</label><textarea id="m" name="message" placeholder="Location, size, when you want to start"></textarea></div>
+      <button type="submit">Send enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Monochrome Architects, Gurgaon / Delhi NCR</span>
+    <span><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a> · <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Project photos">
+  <button class="x" type="button" aria-label="Close">&times;</button>
+  <button class="p" type="button" aria-label="Previous photo">&#8249;</button>
+  <img id="lbimg" alt="">
+  <button class="n" type="button" aria-label="Next photo">&#8250;</button>
+  <p id="lbcap"></p>
+</div>
+
+<script>
+/* ============ EDIT YOUR PROJECTS HERE ============
+   Add as many projects as you want: copy one line, change it.
+   photos: list as many images as you like. The first one is the cover.
+   Put the image files in an "images" folder next to index.html.
+   Leave photos as [] to show a grey placeholder.
+   Example:
+   {name:"Sector 49 Residence", area:"4,200 sq ft", photos:["images/s49-1.jpg","images/s49-2.jpg","images/s49-3.jpg"]},
+*/
+const PROJECTS=[
+  {name:"Project name", area:"____ sq ft", photos:[]},
+  {name:"Project name", area:"____ sq ft", photos:[]},
+  {name:"Project name", area:"____ sq ft", photos:[]}
+];
+/* ================================================= */
+
+(function(){
+  var grid=document.getElementById("cases");
+  var lb=document.getElementById("lb"),img=document.getElementById("lbimg"),cap=document.getElementById("lbcap");
+  var prev=lb.querySelector(".p"),next=lb.querySelector(".n"),close=lb.querySelector(".x");
+  var cur={p:null,i:0},opener=null;
+
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e}
+
+  PROJECTS.forEach(function(p){
+    var card=el("article","case"),cover;
+    if(p.photos&&p.photos.length){
+      cover=el("button","img");cover.type="button";
+      cover.setAttribute("aria-label","View photos of "+p.name);
+      var im=el("img");im.src=p.photos[0];im.alt=p.name;im.loading="lazy";cover.appendChild(im);
+      if(p.photos.length>1)cover.appendChild(el("span","count",p.photos.length+" photos"));
+      cover.addEventListener("click",function(){open(p,0,cover)});
+    }else{cover=el("div","img","Add project photos")}
+    var body=el("div","body");
+    body.appendChild(el("h3","",p.name));
+    body.appendChild(el("p","area",p.area));
+    card.appendChild(cover);card.appendChild(body);grid.appendChild(card);
+  });
+
+  function show(){
+    var n=cur.p.photos.length;
+    img.src=cur.p.photos[cur.i];
+    img.alt=cur.p.name+", photo "+(cur.i+1)+" of "+n;
+    cap.textContent=cur.p.name+" ("+(cur.i+1)+"/"+n+")";
+    prev.hidden=next.hidden=n<2;
+    if(n>1){(new Image()).src=cur.p.photos[(cur.i+1)%n]}
+  }
+  function open(p,i,from){cur={p:p,i:i};opener=from;lb.hidden=false;document.body.style.overflow="hidden";show();close.focus()}
+  function shut(){lb.hidden=true;document.body.style.overflow="";if(opener)opener.focus()}
+  function go(d){var n=cur.p.photos.length;cur.i=(cur.i+d+n)%n;show()}
+
+  prev.addEventListener("click",function(){go(-1)});
+  next.addEventListener("click",function(){go(1)});
+  close.addEventListener("click",shut);
+  lb.addEventListener("click",function(e){if(e.target===lb)shut()});
+  document.addEventListener("keydown",function(e){
+    if(lb.hidden)return;
+    if(e.key==="Escape")shut();
+    if(cur.p.photos.length>1){if(e.key==="ArrowLeft")go(-1);if(e.key==="ArrowRight")go(1)}
+  });
+  var x0=null;
+  lb.addEventListener("touchstart",function(e){x0=e.touches[0].clientX},{passive:true});
+  lb.addEventListener("touchend",function(e){
+    if(x0===null||cur.p.photos.length<2)return;
+    var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>50)go(dx<0?1:-1);
+    x0=null;
+  });
+})();
+</script>
+</body>
+</html>
